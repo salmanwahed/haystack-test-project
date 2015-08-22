@@ -1,7 +1,12 @@
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
-import datetime
+from django.shortcuts import render_to_response, HttpResponse
+from django.views.generic import ListView
+from noticeboard.models import Notice
 
 
 def testing_view(request):
-    return render_to_response('noticeboard/index.html')
+    return HttpResponse("OK")
+
+
+class NoticeBoardView(ListView):
+    model = Notice
+    template_name = 'noticeboard/index.html'

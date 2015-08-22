@@ -2,4 +2,12 @@
 {% block title %}SW{% endblock %}
 {% block body %}
     <h1>Notice Board</h1>
+    <hr>
+    {% for notice in object_list %}
+        <div class="notice">
+            <strong>{{ notice.title }}</strong> | {{ notice.organization }}
+            <p>{{ notice.body }}</p>
+        </div>
+        <hr>
+    {% endfor %}
 {% endblock %}

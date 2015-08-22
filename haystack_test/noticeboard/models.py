@@ -15,7 +15,9 @@ class Notice(models.Model):
     organization = models.CharField(max_length=3, choices=ORGANIZATION_CHOICES)
 
     class Meta:
-        verbose_name = "Notice"
         verbose_name_plural = "Notice Board"
         ordering = ["-pubdate"]
+
+    def __unicode__(self):
+        return self.title[:50]
 
